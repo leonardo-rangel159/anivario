@@ -34,7 +34,7 @@ h1{
   -moz-animation: fa-blink .75s linear infinite;
   -ms-animation: fa-blink .75s linear infinite;
   -o-animation: fa-blink .75s linear infinite;
-  animation: fa-blink .75s linear infinite;
+  animation: fa-blink 5.75s linear infinite;
 }
 
 /*Efeito*/
