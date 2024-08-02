@@ -4,14 +4,15 @@
     src: url('njnaruto.ttf');
 }
 html, body,
-.container {
+.container { 
+  margin: 0; 
   width: 100%;
   height: 100%;
   background-image: url("imagem/1.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 #a{
     margin: auto;
