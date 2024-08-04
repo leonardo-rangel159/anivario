@@ -1,168 +1,165 @@
-/*Downloaded from https://www.codeseek.co/moonglows76/css-confetti-BRVrgZ */
+/* Carrega a fonte personalizada 'Naruto' */
 @font-face {
     font-family: 'Naruto';
     src: url('njnaruto.ttf');
 }
-html, body,
-.container { 
-  margin: 0; 
-  width: 100%;
-  height: 100%;
-  background-image: url("imagem/1.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-  overflow-x: hidden;
-}
-#a{
-    margin: auto;
-}
-h1{
-    font-family: 'Naruto';
-    font-size: 950%;
-    text-align: center;
-    color: rgb(255, 140, 0);
+
+/* Define estilos básicos para html, body e container */
+html, body, .container {
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimento padrão */
+    width: 100%; /* Define largura para 100% da tela */
+    height: 100%; /* Define altura para 100% da tela */
+    background-image: url("imagem/1.jpg"); /* Define imagem de fundo */
+    background-repeat: no-repeat; /* Não repete a imagem de fundo */
+    background-attachment: fixed; /* Fixa a imagem de fundo ao rolar a página */
+    background-size: 100% 100%; /* Ajusta a imagem para cobrir toda a área */
+    overflow: hidden; /* Oculta barras de rolagem */
+    display: flex; /* Usa layout flexível */
+    justify-content: center; /* Centraliza conteúdo horizontalmente */
+    align-items: center; /* Centraliza conteúdo verticalmente */
+    flex-direction: column; /* Alinha conteúdo em coluna */
 }
 
-/*texto*/
-@keyframes fa-blink {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 0; }
+/* Define estilos para a mensagem de aniversário */
+#message {
+    text-align: center; /* Centraliza o texto */
 }
+
+/* Define estilos para os títulos h1 */
+h1 {
+  font-family: 'Naruto'; /* Usa a fonte personalizada 'Naruto' */
+  font-size: 6rem; /* Define o tamanho da fonte */
+  color: rgb(255, 140, 0); /* Define a cor do texto */
+  margin: 0.5rem; /* Define margem ao redor do texto */
+  animation: glow 1.5s infinite alternate; /* Aplica animação de brilho */
+}
+
+/* Define a animação 'glow' para os títulos */
+@keyframes glow {
+  0% {
+    text-shadow:
+      0 0 5px rgb(255, 140, 0),
+      0 0 10px rgb(255, 197, 0),
+      0 0 15px rgb(255, 255, 0);
+  }
+  100% {
+    text-shadow: 
+    0 0 10px rgb(255, 255, 0), 
+    0 0 20px rgb(255, 19, 0), 
+    0 0 30px rgb(255, 255, 0);
+  }
+
+  
+}
+
+/* Define uma animação de piscar para elementos com a classe 'fa-blink' */
 .fa-blink {
-  -webkit-animation: fa-blink .75s linear infinite;
-  -moz-animation: fa-blink .75s linear infinite;
-  -ms-animation: fa-blink .75s linear infinite;
-  -o-animation: fa-blink .75s linear infinite;
-  animation: fa-blink 1.75s linear infinite;
+    animation: blink 1.75s linear infinite;
 }
 
-/*Efeito*/
+/* Define a animação 'blink' */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0.9;
+    }
+}
+
+/* Define o container para os confettis */
+.confetti-container {
+    position: absolute; /* Posiciona o container de forma absoluta */
+    top: 0; /* Alinha ao topo da tela */
+    left: 0; /* Alinha à esquerda da tela */
+    width: 100%; /* Define largura de 100% */
+    height: 100%; /* Define altura de 100% */
+    overflow: hidden; /* Oculta barras de rolagem */
+    pointer-events: none; /* Permite que eventos de ponteiro passem pelo container */
+}
+
+/* Define estilos básicos para cada confetti */
 .confetti {
-  width: 15px;
-  height: 15px;
-  background-color: #f2d74e;
-  position: absolute;
-  left: 50%;
-  -webkit-animation: confetti 5s ease-in-out -2s infinite;
-          animation: confetti 5s ease-in-out -2s infinite;
-  -webkit-transform-origin: left top;
-          transform-origin: left top;
+    width: 15px; /* Define largura do confetti */
+    height: 15px; /* Define altura do confetti */
+    background-color: #f2d74e; /* Define cor de fundo */
+    position: absolute; /* Posiciona de forma absoluta */
+    top: 0; /* Alinha ao topo do container */
+    left: 50%; /* Alinha ao centro horizontal do container */
+    transform-origin: left top; /* Define a origem da transformação */
+    animation: confetti 5s ease-in-out infinite; /* Aplica a animação de confetti */
 }
 
-.confetti:nth-child(1) {
-  background-color: #f2d74e;
-  left: 10%;
-  -webkit-animation-delay: 0;
-          animation-delay: 0;
+/* Define cores diferentes para cada segundo confetti */
+.confetti:nth-child(2n) {
+    background-color: #95c3de;
 }
 
-.confetti:nth-child(2) {
-  background-color: #95c3de;
-  left: 20%;
-  -webkit-animation-delay: -5s;
-          animation-delay: -5s;
+/* Define cores diferentes para cada terceiro confetti */
+.confetti:nth-child(3n) {
+    background-color: #ff9a91;
 }
 
-.confetti:nth-child(3) {
-  background-color: #ff9a91;
-  left: 30%;
-  -webkit-animation-delay: -3s;
-          animation-delay: -3s;
-}
-
-.confetti:nth-child(4) {
-  background-color: #f2d74e;
-  left: 40%;
-  -webkit-animation-delay: -2.5s;
-          animation-delay: -2.5s;
-}
-
-.confetti:nth-child(5) {
-  background-color: #95c3de;
-  left: 50%;
-  -webkit-animation-delay: -4s;
-          animation-delay: -4s;
-}
-
-.confetti:nth-child(6) {
-  background-color: #ff9a91;
-  left: 60%;
-  -webkit-animation-delay: -6s;
-          animation-delay: -6s;
-}
-
-.confetti:nth-child(7) {
-  background-color: #f2d74e;
-  left: 70%;
-  -webkit-animation-delay: -1.5s;
-          animation-delay: -1.5s;
-}
-
-.confetti:nth-child(8) {
-  background-color: #95c3de;
-  left: 80%;
-  -webkit-animation-delay: -2s;
-          animation-delay: -2s;
-}
-
-.confetti:nth-child(9) {
-  background-color: #ff9a91;
-  left: 90%;
-  -webkit-animation-delay: -3.5s;
-          animation-delay: -3.5s;
-}
-
-.confetti:nth-child(10) {
-  background-color: #f2d74e;
-  left: 100%;
-  -webkit-animation-delay: -2.5s;
-          animation-delay: -2.5s;
-}
-
-@-webkit-keyframes confetti {
-  0% {
-    -webkit-transform: rotateZ(15deg) rotateY(0deg) translate(0, 0);
-            transform: rotateZ(15deg) rotateY(0deg) translate(0, 0);
-  }
-  25% {
-    -webkit-transform: rotateZ(5deg) rotateY(360deg) translate(-5vw, 20vh);
-            transform: rotateZ(5deg) rotateY(360deg) translate(-5vw, 20vh);
-  }
-  50% {
-    -webkit-transform: rotateZ(15deg) rotateY(720deg) translate(5vw, 60vh);
-            transform: rotateZ(15deg) rotateY(720deg) translate(5vw, 60vh);
-  }
-  75% {
-    -webkit-transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw, 80vh);
-            transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw, 80vh);
-  }
-  100% {
-    -webkit-transform: rotateZ(15deg) rotateY(1440deg) translate(10vw, 110vh);
-            transform: rotateZ(15deg) rotateY(1440deg) translate(10vw, 110vh);
-  }
-}
-
+/* Define a animação 'confetti' */
 @keyframes confetti {
-  0% {
-    -webkit-transform: rotateZ(15deg) rotateY(0deg) translate(0, 0);
-            transform: rotateZ(15deg) rotateY(0deg) translate(0, 0);
+    0% {
+        transform: rotateZ(15deg) rotateY(0deg) translate(0, 0);
+    }
+    25% {
+        transform: rotateZ(5deg) rotateY(360deg) translate(-5vw, 20vh);
+    }
+    50% {
+        transform: rotateZ(15deg) rotateY(720deg) translate(5vw, 60vh);
+    }
+    75% {
+        transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw, 80vh);
+    }
+    100% {
+        transform: rotateZ(15deg) rotateY(1440deg) translate(10vw, 110vh);
+    }
+}
+
+/* Estilos gerais para dispositivos pequenos (como smartphones) */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 3rem; /* Reduz o tamanho da fonte dos títulos em dispositivos pequenos */
   }
-  25% {
-    -webkit-transform: rotateZ(5deg) rotateY(360deg) translate(-5vw, 20vh);
-            transform: rotateZ(5deg) rotateY(360deg) translate(-5vw, 20vh);
+
+  #message {
+    padding: 1rem; /* Adiciona um pouco de preenchimento ao redor da mensagem */
   }
-  50% {
-    -webkit-transform: rotateZ(15deg) rotateY(720deg) translate(5vw, 60vh);
-            transform: rotateZ(15deg) rotateY(720deg) translate(5vw, 60vh);
+
+  .confetti {
+    width: 10px; /* Reduz o tamanho dos confetes */
+    height: 10px;
   }
-  75% {
-    -webkit-transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw, 80vh);
-            transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw, 80vh);
-  }
-  100% {
-    -webkit-transform: rotateZ(15deg) rotateY(1440deg) translate(10vw, 110vh);
-            transform: rotateZ(15deg) rotateY(1440deg) translate(10vw, 110vh);
-  }
+}
+
+/* Estilos para dispositivos médios (como tablets) */
+@media (max-width: 900px) and (min-width: 601px) {
+    h1 {
+        font-size: 5rem; /* Ajusta o tamanho da fonte dos títulos para tablets */
+    }
+
+    #message {
+        padding: 2rem; /* Ajusta o preenchimento ao redor da mensagem */
+    }
+
+    .confetti {
+        width: 12px; /* Ajusta o tamanho dos confetes */
+        height: 12px;
+    }
+}
+
+/* Estilos para dispositivos grandes (como desktops) */
+@media (min-width: 901px) {
+    h1 {
+        font-size: 8rem; /* Mantém o tamanho da fonte dos títulos para desktops */
+    }
+
+    .confetti {
+        width: 15px; /* Mantém o tamanho dos confetes */
+        height: 15px;
+    }
 }
