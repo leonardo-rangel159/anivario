@@ -1,4 +1,4 @@
-🎉 Amigo Aniversário
+#🎉 Amigo Aniversário
 Um site simples para celebrar aniversários com uma animação de confetes e uma mensagem especial. O projeto utiliza HTML, CSS e JavaScript para criar uma experiência visual festiva.
 
 Visão Geral
